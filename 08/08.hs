@@ -1,4 +1,4 @@
 compress :: (Eq a) => [a] -> [a]
 compress [] = []
 compress [x] = [x]
-compress (x:xs) = if head xs == x then compress xs else x:(compress xs)
+compress (x:y:xs) = if x == y then compress (y:xs) else x:(compress (y:xs))
